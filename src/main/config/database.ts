@@ -1,10 +1,7 @@
 import { Client } from "pg";
+import { env } from "./env";
 
-const client = new Client({
-    user: "dbuser",
-    host: "database.server.com",
-    database: "mydb",
-    password: "secretpassword",
-    port: 3211,
-  });
-  
+export const client = new Client({
+    connectionString: env.databaseUrl,
+    port: 5432,
+});
