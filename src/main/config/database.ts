@@ -1,7 +1,3 @@
-import { Client } from "pg";
-import { env } from "./env";
+import { PrismaClient } from "@prisma/client";
 
-export const client = new Client({
-    connectionString: env.databaseUrl,
-    port: 5432,
-});
+export const prismaClient = new PrismaClient();
